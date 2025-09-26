@@ -392,38 +392,74 @@ ion-icon {
 
 
 /* footer page */
+/* Anuj works on footer file-footerAnuj.jsx*/
 /* ===== Footer Container ===== */
-/* ===== Footer Container ===== */
-.footer-container {
+/* General Font/Body styles for context */
+
+/* ===== Main Footer Wrapper ===== */
+.footer-wrapper {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #16697A;
-  color: #ffffff;
+  background-color: #ffffff; /* Main background for the entire component */
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
 }
 
-/* ===== Upper Section ===== */
+/* ===== 1. Upper Section (Blue Call-to-Action) ===== */
 .footer-upper-section {
+  background-color: #edebeb;
+  color: rgb(0, 0, 0);
   width: 100%;
+  padding: 4rem 1.5rem;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
-  background: #FAFAFA;
-  color: #000000;
-  padding: 1.5rem 0;
 }
 
 .footer-upper-inner {
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1100px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
+.footer-upper-left h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.footer-upper-left p {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.footer-contact-btn {
+  background: #ffa62b;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 1rem 2.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+}
+
+.footer-contact-btn:hover {
+  background: #e69526;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments for the upper section */
 @media (min-width: 768px) {
   .footer-upper-inner {
     flex-direction: row;
@@ -431,161 +467,141 @@ ion-icon {
   }
 }
 
-.footer-left {
-  width: 100%;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.footer-contact-btn {
-  background: #ffa62b;
-  border-radius: 12px;
-  color: #ffffff;
-  font-weight: 500;
-  font-size: 1.1rem;
-  padding: 0.6rem 1.2rem;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.footer-contact-btn:hover {
-  background: #ff9a1a;
-  transform: scale(1.05);
-}
-
-/* ===== Lower Section ===== */
+/* ===== 2. Lower Section (Three Columns) ===== */
 .footer-lower-section {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 2rem 0;
+  padding: 5rem 1.5rem;
+  box-sizing: border-box;
+  background: #16697a; /* Light gray background */
 }
 
-.footer-lower-inner {
-  width: 90%;
-  max-width: 1200px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 2rem;
+.footer-content {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: space-between; /* This is key for spacing columns */
+  flex-wrap: wrap; /* Allows columns to stack on small screens */
+  gap: 3rem; /* Space between columns when they wrap */
 }
 
-.footer-column {
-  min-width: 160px;
+.footer-section {
+  flex: 1; /* Allows columns to grow */
+  min-width: 220px; /* Prevents columns from getting too narrow */
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-links-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  color: #ffffff;
 }
 
 .footer-links {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-.footer-links li {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  cursor: pointer;
-}
-
-.footer-links li:hover {
-  text-decoration: underline;
-}
-
-/* ===== Get In Touch ===== */
-.footer-contact-item {
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.footer-contact-item img {
-  width: 1.3rem;
-}
-
-.footer-contact-item p {
-  margin: 0;
-  font-size: 0.95rem;
-}
-
-/* ===== Bottom Section ===== */
-.footer-bottom-wrapper {
-  width: 100%;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #ffffff;
-  border-top: 1px solid #e0e0e0;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 1rem;
 }
 
-.footer-bottom-text {
-  font-size: 0.9rem;
-  color: #555555;
+.footer-links li,
+.footer-links a {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ffffff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links li:hover,
+.footer-links a:hover {
+  /* color: #FFA62B; */
+  text-decoration-line: underline;
+}
+
+/* Specific styling for the "Get in Touch" items */
+.footer-contact-item {
+  display: flex;
+  align-items: center; /* Vertically align icon and text */
+  gap: 1rem; /* Space between icon and text */
+}
+
+.footer-contact-item img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.footer-contact-item p,
+.footer-contact-item div {
   margin: 0;
+  line-height: 1.5; /* Improves readability for multi-line address */
+}
+
+/* ===== 3. Bottom Section (Copyright & Social Icons) ===== */
+.footer-bottom-section {
+  width: 100%;
+  max-width: 1100px;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; /* This is key for mobile */
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem; /* Increased gap slightly for better spacing */
+  background: #ffffff;
+}
+
+/* NEW: Add this class for the copyright text */
+.footer-copyright {
+  margin: 0;
+  font-weight: 300;
+  color: #000000;
   text-align: center;
+  font-size: small;
+  order: 2; /* 👈 Set order to 2 (will appear second) */
 }
 
 .footer-social-icons {
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  
+  gap: 1.25rem;
+  align-items: center;
+  order: 1; /* 👈 Set order to 1 (will appear first) */
+}
+
+.footer-social-icons a {
+  display: inline-block;
 }
 
 .footer-social-icons img {
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
+  width: 24px;
+  height: 24px;
   transition: transform 0.3s ease;
 }
 
 .footer-social-icons img:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
-/* Responsive Tweaks */
-@media (max-width: 768px) {
-  .footer-upper-inner {
-    flex-direction: column;
-    text-align: center;
+/* --- Media Query for Desktop --- */
+@media (min-width: 768px) {
+  .footer-bottom-section {
+    flex-direction: row; /* Switches to horizontal layout */
   }
 
-  .footer-bottom-wrapper {
-    flex-direction: column;
-    text-align: center;
+  /* NEW: Reset the order for desktop view */
+  .footer-copyright {
+    order: initial; /* 👈 Reset order */
   }
 
-  .footer-column {
-    text-align: center;
-  }
-
-  .footer-contact-item {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .footer-contact-btn {
-    width: 100%;
-    font-size: 1rem;
-  }
-
-  .footer-social-icons img {
-    width: 24px;
-    height: 24px;
-  }
-  .footer-social-icons  {
-    justify-content: center;
+  .footer-social-icons {
+    order: initial; /* 👈 Reset order */
   }
 }
 
