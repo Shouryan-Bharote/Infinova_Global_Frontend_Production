@@ -1,21 +1,18 @@
-@import "tailwindcss";
-*{
-    box-sizing: border-box;
-    font-family: Montserrat;
-    padding: 0;
-    margin: 0;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-html,body{
-    height: 100%;
-    width: 100%;
-    
+html,
+body {
+  height: 100%;
+  width: 100%;
 }
 ion-icon {
   color: white;
   font-size: 5vw;
   cursor: pointer;
 }
-
 
 /* about us page */
 /* AboutUs Section Custom Spacing */
@@ -134,10 +131,10 @@ ion-icon {
   padding: 2rem 1rem;
   border-radius: 1rem;
   border: 1px solid #e5e7eb;
- 
+
   box-shadow: 0 2px 6px #00000061;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
+
   text-align: center;
 }
 
@@ -183,7 +180,7 @@ ion-icon {
   animation: marquee 18s linear infinite;
 }
 
-.hamburgerIcon{
+.hamburgerIcon {
   font-size: 5rem;
 }
 
@@ -231,7 +228,7 @@ ion-icon {
   padding: 40px 80px;
   border-radius: 20px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
- transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .division-logo-card:hover {
@@ -303,7 +300,6 @@ ion-icon {
   }
 }
 
-
 /* home page */
 /* ===== Home Container ===== */
 .home-container {
@@ -370,7 +366,7 @@ ion-icon {
 .explore-btn:hover {
   background: #090040;
   transform: scale(1.05);
-  color:white;
+  color: white;
 }
 
 /* ===== Responsive Styling ===== */
@@ -390,40 +386,75 @@ ion-icon {
   }
 }
 
-
 /* footer page */
+/* Anuj works on footer file-footerAnuj.jsx*/
 /* ===== Footer Container ===== */
-/* ===== Footer Container ===== */
-.footer-container {
+/* General Font/Body styles for context */
+
+/* ===== Main Footer Wrapper ===== */
+.footer-wrapper {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #16697A;
-  color: #ffffff;
+  background-color: #ffffff; /* Main background for the entire component */
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
 }
 
-/* ===== Upper Section ===== */
+/* ===== 1. Upper Section (Blue Call-to-Action) ===== */
 .footer-upper-section {
+  background-color: #edebeb;
+  color: rgb(0, 0, 0);
   width: 100%;
+  padding: 4rem 1.5rem;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
-  background: #FAFAFA;
-  color: #000000;
-  padding: 1.5rem 0;
 }
 
 .footer-upper-inner {
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1100px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
+.footer-upper-left h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.footer-upper-left p {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.footer-contact-btn {
+  background: #ffa62b;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 1rem 2.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+}
+
+.footer-contact-btn:hover {
+  background: #e69526;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments for the upper section */
 @media (min-width: 768px) {
   .footer-upper-inner {
     flex-direction: row;
@@ -431,163 +462,144 @@ ion-icon {
   }
 }
 
-.footer-left {
-  width: 100%;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.footer-contact-btn {
-  background: #ffa62b;
-  border-radius: 12px;
-  color: #ffffff;
-  font-weight: 500;
-  font-size: 1.1rem;
-  padding: 0.6rem 1.2rem;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.footer-contact-btn:hover {
-  background: #ff9a1a;
-  transform: scale(1.05);
-}
-
-/* ===== Lower Section ===== */
+/* ===== 2. Lower Section (Three Columns) ===== */
 .footer-lower-section {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 2rem 0;
+  padding: 5rem 1.5rem;
+  box-sizing: border-box;
+  background: #16697a; /* Light gray background */
 }
 
-.footer-lower-inner {
-  width: 90%;
-  max-width: 1200px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 2rem;
+.footer-content {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: space-between; /* This is key for spacing columns */
+  flex-wrap: wrap; /* Allows columns to stack on small screens */
+  gap: 3rem; /* Space between columns when they wrap */
 }
 
-.footer-column {
-  min-width: 160px;
+.footer-section {
+  flex: 1; /* Allows columns to grow */
+  min-width: 220px; /* Prevents columns from getting too narrow */
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-links-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  color: #ffffff;
 }
 
 .footer-links {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-.footer-links li {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  cursor: pointer;
-}
-
-.footer-links li:hover {
-  text-decoration: underline;
-}
-
-/* ===== Get In Touch ===== */
-.footer-contact-item {
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.footer-contact-item img {
-  width: 1.3rem;
-}
-
-.footer-contact-item p {
-  margin: 0;
-  font-size: 0.95rem;
-}
-
-/* ===== Bottom Section ===== */
-.footer-bottom-wrapper {
-  width: 100%;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #ffffff;
-  border-top: 1px solid #e0e0e0;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 1rem;
 }
 
-.footer-bottom-text {
-  font-size: 0.9rem;
-  color: #555555;
+.footer-links li,
+.footer-links a {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ffffff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links li:hover,
+.footer-links a:hover {
+  /* color: #FFA62B; */
+  text-decoration-line: underline;
+}
+
+/* Specific styling for the "Get in Touch" items */
+.footer-contact-item {
+  display: flex;
+  align-items: center; /* Vertically align icon and text */
+  gap: 1rem; /* Space between icon and text */
+}
+
+.footer-contact-item img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.footer-contact-item p,
+.footer-contact-item div {
   margin: 0;
+  line-height: 1.5; /* Improves readability for multi-line address */
+}
+
+/* ===== 3. Bottom Section (Copyright & Social Icons) ===== */
+.footer-bottom-section {
+  width: 100%;
+  max-width: 1100px;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; /* This is key for mobile */
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem; /* Increased gap slightly for better spacing */
+  background: #ffffff;
+}
+
+/* NEW: Add this class for the copyright text */
+.footer-copyright {
+  margin: 0;
+  font-weight: 300;
+  color: #000000;
   text-align: center;
+  font-size: small;
+  order: 2; /* 👈 Set order to 2 (will appear second) */
 }
 
 .footer-social-icons {
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  
+  gap: 1.25rem;
+  align-items: center;
+  order: 1; /* 👈 Set order to 1 (will appear first) */
+}
+
+.footer-social-icons a {
+  display: inline-block;
 }
 
 .footer-social-icons img {
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
+  width: 24px;
+  height: 24px;
   transition: transform 0.3s ease;
 }
 
 .footer-social-icons img:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
-/* Responsive Tweaks */
-@media (max-width: 768px) {
-  .footer-upper-inner {
-    flex-direction: column;
-    text-align: center;
+/* --- Media Query for Desktop --- */
+@media (min-width: 768px) {
+  .footer-bottom-section {
+    flex-direction: row; /* Switches to horizontal layout */
   }
 
-  .footer-bottom-wrapper {
-    flex-direction: column;
-    text-align: center;
+  /* NEW: Reset the order for desktop view */
+  .footer-copyright {
+    order: initial; /* 👈 Reset order */
   }
 
-  .footer-column {
-    text-align: center;
-  }
-
-  .footer-contact-item {
-    justify-content: center;
+  .footer-social-icons {
+    order: initial; /* 👈 Reset order */
   }
 }
 
-@media (max-width: 480px) {
-  .footer-contact-btn {
-    width: 100%;
-    font-size: 1rem;
-  }
-
-  .footer-social-icons img {
-    width: 24px;
-    height: 24px;
-  }
-  .footer-social-icons  {
-    justify-content: center;
-  }
-}
 
 /* ===== Navbar Extra ===== */
 .logoDiv {
@@ -611,11 +623,11 @@ ion-icon {
 }
 
 .listItems:hover {
-  color: #0598EC;
+  color: #0598ec;
 }
 
 .close {
-  color: #0598EC;
+  color: #0598ec;
 }
 
 /* careers page */
@@ -623,11 +635,11 @@ ion-icon {
 
 /* Unique class for page container */
 .careers-page-container {
-  height: 100vh;             /* Full height of viewport */
+  height: 100vh; /* Full height of viewport */
   display: flex;
-  flex-direction: column;    /* Stack heading and message vertically */
-  justify-content: center;   /* Center vertically */
-  align-items: center;       /* Center horizontally */
+  flex-direction: column; /* Stack heading and message vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
   background-color: #f8f9fa; /* Light gray background */
   padding: 20px;
   margin: 0;
@@ -652,12 +664,11 @@ ion-icon {
 }
 /* contact us page */
 
-
 /* Main Container */
 .contactus-page-container {
   padding: 80px 20px;
   margin: 0 auto;
-  width:100vw;
+  width: 100vw;
   /* max-width: 1200px; */
   background: linear-gradient(to bottom right, #f8fafc, #e0f2fe);
   text-align: center;
@@ -723,7 +734,6 @@ ion-icon {
   font-size: 1rem;
   cursor: pointer;
 }
-
 
 /* EduventuresNavbar */
 /* Navbar container */
@@ -1033,8 +1043,8 @@ ion-icon {
 .eduventuresForUniversitiesHeroSection {
   padding: 2rem 1rem;
   width: 100%;
-  max-width: 100vw;   /* stay inside screen width */
-  overflow: hidden;   /* hide accidental overflow */
+  max-width: 100vw; /* stay inside screen width */
+  overflow: hidden; /* hide accidental overflow */
   display: flex;
   flex-direction: column;
 }
@@ -1080,7 +1090,6 @@ ion-icon {
 .eduventuresForUniversitiesHeroSectionButton {
   padding: 1rem 2.5rem;
   font-size: 1rem;
-  margin-top: 5px;
 }
 
 /* ================================
@@ -1103,8 +1112,8 @@ ion-icon {
 .eduventuresForUniversitiesHeroSectionImage {
   width: 100%;
   height: auto;
-  max-width: 100%;    /* cannot exceed parent width */
-  max-height: 70vh;   /* limit height relative to viewport */
+  max-width: 100%; /* cannot exceed parent width */
+  max-height: 70vh; /* limit height relative to viewport */
   object-fit: contain; /* scale without distortion */
 }
 
@@ -1117,7 +1126,7 @@ ion-icon {
 /* Stats Section */
 .EduventuresUniversitiesContactStats {
   margin-bottom: 3rem;
-  gap: 2rem;
+  gap: 4rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1125,8 +1134,8 @@ ion-icon {
 
 /* Stat Boxes (equal size) */
 .EduventuresUniversitiesContactStatBox {
-  width: 220px;
-  height: 120px;
+  width: 330px;
+  height: 100px;
   text-align: center;
   padding: 1.5rem;
   box-shadow: -0.5rem 0.5rem rgba(0, 0, 0, 0.231);
@@ -1163,7 +1172,7 @@ ion-icon {
   border: none;
   outline: none;
   background: white; /* White background */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
   box-sizing: border-box;
 }
@@ -1176,7 +1185,7 @@ ion-icon {
 }
 
 .EduventuresUniversitiesContactPhone input:first-child {
-  flex: 0 0 70px;  /* fixed width for +91 field */
+  flex: 0 0 70px; /* fixed width for +91 field */
   text-align: center;
 }
 
@@ -1247,7 +1256,7 @@ ion-icon {
 /* Cards container spacing */
 .eduventuresCourses-cards {
   margin-bottom: 2rem;
-  gap: 2rem; /* spacing between cards */
+  gap: 6rem; /* spacing between cards */
 }
 
 /* Wrapper around card */
@@ -1259,8 +1268,8 @@ ion-icon {
 
 /* Card spacing */
 .eduventuresCourses-card {
-  width: 280px;
-  height: 380px;
+  width: 320px;
+  height: 420px;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -1273,7 +1282,7 @@ ion-icon {
 }
 
 .eduventuresCourses-image img {
-  height: 180px;
+  height: 220px;
   object-fit: cover;
   width: 100%;
 }
@@ -1324,21 +1333,20 @@ ion-icon {
 .eduventuresCourses-showmoreArrow {
   margin-left: 0.25rem;
 }
-.eduventuresCourses-card{
-  box-shadow:0.1rem  0.5rem 0.1rem 0.1rem  rgba(0, 0, 0, 0.273);
+.eduventuresCourses-card {
+  box-shadow: 0.1rem 0.5rem 0.1rem 0.1rem rgba(0, 0, 0, 0.273);
   margin-bottom: 1rem;
 }
-.eduventuresCourses-card:hover{
+.eduventuresCourses-card:hover {
   transform: scale(1.1);
 }
-.eduventuresCourses-btn{
+.eduventuresCourses-btn {
   border: 5px solid black;
   box-shadow: 0.2rem 0.2rem black;
 }
-.eduventuresCourses-showmoreBtn{
-  
-  background-color: #E4EFFF;
-  border:2px solid blue;
+.eduventuresCourses-showmoreBtn {
+  background-color: #e4efff;
+  border: 2px solid blue;
 }
 
 /* Eduventures Trainers */
@@ -1355,12 +1363,12 @@ ion-icon {
 
 /* Cards container */
 .eduventuresTrainers-cards {
-  gap: 2rem;
+  gap: 5rem;
 }
 
 /* Individual card */
 .eduventuresTrainers-card {
-  width: 280px;
+  width: 320px;
   padding: 1rem; /* moved here instead of JSX */
   display: flex;
   flex-direction: column;
@@ -1381,7 +1389,7 @@ ion-icon {
 .eduventuresTrainers-cardContent {
   display: flex;
   flex-direction: column;
-  text-align: left;
+  text-align: center;
 }
 
 /* Divider spacing */
@@ -1419,8 +1427,12 @@ ion-icon {
   display: inline-block;
 }
 @keyframes marquee {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 /* Title */
@@ -1449,7 +1461,7 @@ ion-icon {
   background: white;
   padding: 20px 30px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   flex-wrap: wrap;
 }
 .testimonial-img {
@@ -1480,7 +1492,7 @@ ion-icon {
 
 /* Arrows */
 .arrow-btn {
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.9);
   border: 2px solid #2563eb;
   color: #2563eb;
   border-radius: 50%;
@@ -1609,7 +1621,6 @@ ion-icon {
   align-items: center;
   justify-content: center;
   padding: 5rem;
-  
 }
 
 .booking-card {
@@ -1629,13 +1640,18 @@ ion-icon {
 }
 
 .booking-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 0.3),
+    transparent
+  );
 }
 
 .booking-title {
@@ -1650,7 +1666,7 @@ ion-icon {
 }
 
 .text-blue {
-  color: #0056D2;
+  color: #0056d2;
 }
 
 .form-container {
@@ -1661,7 +1677,6 @@ ion-icon {
 
 .input-group {
   width: 100%;
-
 }
 
 .form-input {
@@ -1677,7 +1692,6 @@ ion-icon {
   outline: none;
   font-family: inherit;
 
-
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1685,8 +1699,7 @@ ion-icon {
 
 .form-input:focus {
   border-color: #3b82f6;
-  box-shadow:
-    0 0 0 4px rgba(59, 130, 246, 0.1),
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1),
     0 8px 25px -8px rgba(59, 130, 246, 0.2);
   background: rgba(255, 255, 255, 0.95);
   transform: translateY(-1px);
@@ -1723,7 +1736,7 @@ ion-icon {
 
 .submit-button {
   width: 100%;
-  background: linear-gradient(135deg, #3b82f6 0%, #0056D2 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #0056d2 100%);
   color: white;
   padding: 18px 32px;
   border: none;
@@ -1742,20 +1755,24 @@ ion-icon {
 }
 
 .submit-button::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   transition: left 0.6s ease;
 }
 
 .submit-button:hover {
   transform: translateY(-2px);
-  box-shadow:
-    0 20px 25px -5px rgba(59, 130, 246, 0.3),
+  box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.3),
     0 10px 10px -5px rgba(59, 130, 246, 0.1);
   background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
 }
@@ -1863,7 +1880,7 @@ ion-icon {
   display: flex;
   align-items: flex-end;
   padding: 2rem 1rem 2rem 1rem;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
 .banner-container {
@@ -1999,11 +2016,10 @@ ion-icon {
 
   .image-container {
     max-width: 240px;
-    
   }
-    .illustration-section{
+  .illustration-section {
     bottom: -15%;
-    }
+  }
 }
 
 /* master class section  */
@@ -2013,7 +2029,7 @@ ion-icon {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .header {
@@ -2029,7 +2045,7 @@ ion-icon {
 }
 
 .highlight {
-  background: #0056D2;
+  background: #0056d2;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -2077,8 +2093,8 @@ ion-icon {
 }
 
 .instructor-section {
-  background: #0056D2;
-  border-radius:  0px 60px 60px 0px;
+  background: #0056d2;
+  border-radius: 0px 60px 60px 0px;
   padding: 20px;
   display: flex;
   align-items: center;
@@ -2122,7 +2138,7 @@ ion-icon {
 }
 
 .register-btn {
-  background: #0056D2;
+  background: #0056d2;
   color: white;
   border: none;
   padding: 15px 30px;
@@ -2242,7 +2258,6 @@ ion-icon {
     height: 50px;
   }
 }
-
 
 /* Eduventures for students navbar */
 
@@ -2570,27 +2585,39 @@ ion-icon {
 
 .coming-soon-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #E8D5FF 0%, #D1C4E9 25%, #B39DDB 50%, #9575CD 75%, #7E57C2 100%);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(
+    135deg,
+    #e8d5ff 0%,
+    #d1c4e9 25%,
+    #b39ddb 50%,
+    #9575cd 75%,
+    #7e57c2 100%
+  );
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
   position: relative;
   overflow-x: hidden;
 }
 
 /* Background Animation */
 .coming-soon-container::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%, rgba(255, 255, 255, 0.1) 100%);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
   animation: shimmer 3s ease-in-out infinite;
   pointer-events: none;
 }
 
 @keyframes shimmer {
-
   0%,
   100% {
     opacity: 0.3;
@@ -2649,7 +2676,7 @@ ion-icon {
 
 .subtitle {
   font-size: 16px;
-  color: #4A5568;
+  color: #4a5568;
   font-weight: 500;
   letter-spacing: 2px;
   margin-bottom: 10px;
@@ -2659,13 +2686,13 @@ ion-icon {
 .main-title {
   font-size: clamp(2.5rem, 8vw, 5rem);
   font-weight: 700;
-  color: #2D3748;
+  color: #2d3748;
   line-height: 1.1;
   margin-bottom: 20px;
 }
 
 .highlight {
-  background: linear-gradient(135deg, #3182CE 0%, #2B6CB0 50%, #2C5282 100%);
+  background: linear-gradient(135deg, #3182ce 0%, #2b6cb0 50%, #2c5282 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -2674,14 +2701,14 @@ ion-icon {
 
 .description {
   font-size: clamp(16px, 2vw, 20px);
-  color: #4A5568;
+  color: #4a5568;
   margin-bottom: 10px;
   font-weight: 400;
 }
 
 .stay-tuned {
   font-size: clamp(16px, 2vw, 20px);
-  color: #2D3748;
+  color: #2d3748;
 }
 
 .stay-tuned strong {
@@ -2701,7 +2728,6 @@ ion-icon {
 }
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0px);
@@ -2740,18 +2766,18 @@ ion-icon {
   outline: none;
   padding: 16px 24px;
   font-size: 16px;
-  color: #2D3748;
+  color: #2d3748;
   background: transparent;
   border-radius: 50px;
 }
 
 .email-input::placeholder {
-  color: #A0AEC0;
+  color: #a0aec0;
   font-weight: 400;
 }
 
 .notify-button {
-  background: #2D3748;
+  background: #2d3748;
   color: white;
   border: none;
   padding: 16px 28px;
@@ -2769,7 +2795,7 @@ ion-icon {
 }
 
 .notify-button:hover:not(:disabled) {
-  background: #1A202C;
+  background: #1a202c;
   transform: translateY(-1px);
   box-shadow: 0 5px 15px rgba(45, 55, 72, 0.3);
 }
@@ -2779,7 +2805,7 @@ ion-icon {
 }
 
 .notify-button.success {
-  background: #38A169;
+  background: #38a169;
   cursor: default;
 }
 
@@ -2890,30 +2916,30 @@ ion-icon {
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
   .subtitle {
-    color: #718096;
+    color: #021b40;
   }
 
   .main-title {
-    color: #F7FAFC;
+    color: #f7fafc;
   }
 
   .description {
-    color: #A0AEC0;
+    color: #000000;
   }
 
   .stay-tuned {
-    color: #E2E8F0;
+    color: #000000;
   }
 }
-.globalIcon{
+.globalIcon {
   width: 20vw;
 }
 /* For mobile devices */
 @media (max-width: 576px) {
- .globalIcon{
-  width:50vw;
- }
- .hamburgerIcon{
-  font-size: 4rem;
- }
+  .globalIcon {
+    width: 50vw;
+  }
+  .hamburgerIcon {
+    font-size: 4rem;
+  }
 }

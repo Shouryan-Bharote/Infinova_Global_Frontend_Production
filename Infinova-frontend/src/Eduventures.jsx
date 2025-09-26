@@ -4,6 +4,7 @@ import EduventuresNavbar from '../components/EduventuresNavbar';
 import EduventuresForStudents from './pages/EduventuresForStudents';
 import EduventuresForUniversities from './pages/EduventuresForUniversities';
 import Footer from '../components/Footer';
+import FooterAnuj from '../components/Footer/FooterAnuj';
 
 const Eduventures = () => {
   return (
@@ -18,7 +19,7 @@ const Eduventures = () => {
         <Route path="foruniversities" element={<EduventuresForUniversities />} />
       </Routes>
 
-      <Footer />
+      <FooterAnuj />
     </>
   );
 };
