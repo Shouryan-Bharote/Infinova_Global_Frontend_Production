@@ -101,7 +101,7 @@ const EduventuresForUniversitiesNavbar = () => {
         </div>
 
         {/* Right: Mobile Hamburger */}
-        <div className="md:hidden">
+        <div className="md:hidden ml-auto flex items-center">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-2 rounded-md text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -115,7 +115,9 @@ const EduventuresForUniversitiesNavbar = () => {
               )}
             </svg>
           </button>
-          
+
+          {/* Empty spacer to the right of hamburger (mobile only) */}
+          <div className="w-4" aria-hidden="true" />
         </div>
       </nav>
 
