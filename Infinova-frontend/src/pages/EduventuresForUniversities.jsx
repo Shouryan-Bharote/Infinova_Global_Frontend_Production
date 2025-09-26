@@ -1,5 +1,6 @@
 import React from 'react'
-import EduventuresForUniversitiesNavbar from '../../components/EduventuresForUniversitiesNavbar'
+// import EduventuresForUniversitiesNavbar from '../../components/EduventuresForUniversitiesNavbar'
+import EduventuresForUniversitiesNavbar from '../../components/EduventuresForUniversitiesNavbarNew'
 import EduventuresForUniversitiesHeroSection from './EduventuresForUniversitiesHeroSection'
 import EduventuresUniversitiesContact from './EduventuresUniversitiesContact'
 import EduventuresCourses from './EduventuresCourses'
