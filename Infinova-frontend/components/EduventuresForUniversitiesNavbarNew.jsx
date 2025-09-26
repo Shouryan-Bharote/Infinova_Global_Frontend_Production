@@ -8,6 +8,19 @@ const EduventuresForUniversitiesNavbar = () => {
   const [isPartnersOpen, setIsPartnersOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // ✅ Dynamic Lists
+  const programs = [
+    { label: 'Program 1', href: '#program1' },
+    { label: 'Program 2', href: '#program2' },
+    { label: 'Program 3', href: '#program3' },
+  ];
+
+  const partners = [
+    { label: 'Partner 1', href: '#partner1' },
+    { label: 'Partner 2', href: '#partner2' },
+    { label: 'Partner 3', href: '#partner3' },
+  ];
+
   return (
     <>
       {/* Navbar */}
@@ -30,15 +43,14 @@ const EduventuresForUniversitiesNavbar = () => {
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center space-x-8">
-            {/* Programs Dropdown (hover on desktop) */}
+            
+            {/* Programs Dropdown */}
             <div
               className="relative"
               onMouseEnter={() => setIsProgramsOpen(true)}
               onMouseLeave={() => setIsProgramsOpen(false)}
             >
-              <button
-                className="font-medium text-gray-800 hover:text-blue-600 focus:outline-none px-3 py-2 rounded-md hover:bg-gray-100"
-              >
+              <button className="font-medium text-gray-800 hover:text-blue-600 focus:outline-none px-3 py-2 rounded-md hover:bg-gray-100">
                 Our Programs ▾
               </button>
               <AnimatePresence>
@@ -50,29 +62,27 @@ const EduventuresForUniversitiesNavbar = () => {
                     transition={{ duration: 0.2 }}
                     className="absolute top-full mt-2 w-48 bg-white border rounded-md shadow-md py-2 z-50"
                   >
-                    <a href="#program1" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-                      Program 1
-                    </a>
-                    <a href="#program2" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-                      Program 2
-                    </a>
-                    <a href="#program3" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-                      Program 3
-                    </a>
+                    {programs.map((program) => (
+                      <a
+                        key={program.href}
+                        href={program.href}
+                        className="block pl-5 pr-3 text-gray-700 hover:bg-gray-100"
+                      >
+                        {program.label}
+                      </a>
+                    ))}
                   </motion.div>
                 )}
               </AnimatePresence>
             </div>
 
-            {/* Partners Dropdown (hover on desktop) */}
+            {/* Partners Dropdown */}
             <div
               className="relative"
               onMouseEnter={() => setIsPartnersOpen(true)}
               onMouseLeave={() => setIsPartnersOpen(false)}
             >
-              <button
-                className="font-medium text-gray-800 hover:text-blue-600 focus:outline-none px-3 py-2 rounded-md hover:bg-gray-100"
-              >
+              <button className="font-medium text-gray-800 hover:text-blue-600 focus:outline-none px-3 py-2 rounded-md hover:bg-gray-100">
                 Our Partners ▾
               </button>
               <AnimatePresence>
@@ -84,15 +94,15 @@ const EduventuresForUniversitiesNavbar = () => {
                     transition={{ duration: 0.2 }}
                     className="absolute top-full mt-2 w-48 bg-white border rounded-md shadow-md py-2 z-50"
                   >
-                    <a href="#partner1" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-                      Partner 1
-                    </a>
-                    <a href="#partner2" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-                      Partner 2
-                    </a>
-                    <a href="#partner3" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-                      Partner 3
-                    </a>
+                    {partners.map((partner) => (
+                      <a
+                        key={partner.href}
+                        href={partner.href}
+                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                      >
+                        {partner.label}
+                      </a>
+                    ))}
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -115,8 +125,6 @@ const EduventuresForUniversitiesNavbar = () => {
               )}
             </svg>
           </button>
-
-          {/* Empty spacer to the right of hamburger (mobile only) */}
           <div className="w-4" aria-hidden="true" />
         </div>
       </nav>
@@ -131,8 +139,9 @@ const EduventuresForUniversitiesNavbar = () => {
             transition={{ duration: 0.3 }}
             className="md:hidden bg-white border-b border-gray-200 shadow-md overflow-hidden"
           >
-            <div className="flex flex-col px-4 py-3 space-y-2">
-              {/* Programs (click on mobile) */}
+            <div className="flex flex-col px-5 py-4 space-y-3">
+              
+              {/* Programs Mobile */}
               <button
                 onClick={() => setIsProgramsOpen(!isProgramsOpen)}
                 className="w-full text-left font-medium text-gray-800 hover:text-blue-600 px-3 py-2 rounded-md hover:bg-gray-100"
@@ -145,23 +154,23 @@ const EduventuresForUniversitiesNavbar = () => {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="ml-4 flex flex-col space-y-1 overflow-hidden"
+                    transition={{ duration: 0.25 }}
+                    className="ml-4 flex flex-col space-y-2 overflow-hidden"
                   >
-                    <a href="#program1" className="px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">
-                      Program 1
-                    </a>
-                    <a href="#program2" className="px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">
-                      Program 2
-                    </a>
-                    <a href="#program3" className="px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">
-                      Program 3
-                    </a>
+                    {programs.map((program) => (
+                      <a
+                        key={program.href}
+                        href={program.href}
+                        className="px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
+                      >
+                        {program.label}
+                      </a>
+                    ))}
                   </motion.div>
                 )}
               </AnimatePresence>
 
-              {/* Partners (click on mobile) */}
+              {/* Partners Mobile */}
               <button
                 onClick={() => setIsPartnersOpen(!isPartnersOpen)}
                 className="w-full text-left font-medium text-gray-800 hover:text-blue-600 px-3 py-2 rounded-md hover:bg-gray-100"
@@ -174,18 +183,18 @@ const EduventuresForUniversitiesNavbar = () => {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="ml-4 flex flex-col space-y-1 overflow-hidden"
+                    transition={{ duration: 0.25 }}
+                    className="ml-4 flex flex-col space-y-2 overflow-hidden"
                   >
-                    <a href="#partner1" className="px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">
-                      Partner 1
-                    </a>
-                    <a href="#partner2" className="px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">
-                      Partner 2
-                    </a>
-                    <a href="#partner3" className="px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">
-                      Partner 3
-                    </a>
+                    {partners.map((partner) => (
+                      <a
+                        key={partner.href}
+                        href={partner.href}
+                        className="px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
+                      >
+                        {partner.label}
+                      </a>
+                    ))}
                   </motion.div>
                 )}
               </AnimatePresence>

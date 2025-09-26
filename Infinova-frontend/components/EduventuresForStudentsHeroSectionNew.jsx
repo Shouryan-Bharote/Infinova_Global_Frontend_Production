@@ -6,7 +6,7 @@ const EduventuresForStudentsHeroSection = () => {
     <div
       className="w-full"
       style={{
-        background: 'linear-gradient(135deg, #e6f3ff 0%, #cce7ff 50%, #b3dbff 100%)',
+        background: '#E4EFFF',
       }}
     >
       {/* You can change height of hero section from here  */}
