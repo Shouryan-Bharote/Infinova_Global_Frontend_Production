@@ -603,6 +603,65 @@ ion-icon {
 
 
 /* ===== Navbar Extra ===== */
+/* toggler icon added by satish */
+/*glass effect on navBar*/
+/*mediaquery for hamburger and global icon*/
+.hamburgerIcon {
+  margin-left: -75px;
+  margin-top: 3px;
+  width: 50px;
+  height: 35px;
+  filter: brightness(0) saturate(100%);
+}
+
+.globalIcon {
+  margin-left: -10px;
+  margin-top: 3px;
+  width: 80px;
+  height: 60px;
+}
+
+/* 📱 Small screens (phones) */
+@media screen and (max-width: 640px) {
+  .hamburgerIcon {
+    margin-left: 14px;   /* reduce left gap */
+    margin-top: -30px;    /* reduce top gap */
+    width: 50px;        /* smaller size */
+    height: 35px;
+  }
+
+  .globalIcon {
+    margin-left: 6px;
+    margin-top: -30px;
+    width: 120px;       /* shrink logo on phones */
+  }
+}
+
+/* 💻 Medium screens (tablets) */
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+  .hamburgerIcon {
+    margin-left: 6px;
+    margin-top: 3px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .globalIcon {
+    margin-left: 8px;
+    margin-top: 2px;
+    width: 160px;
+  }
+}
+
+.close {
+  width: 60px;         /* increase width */
+  height: 60px;        /* increase height */
+  margin-right: 15px;  /* space to the right */
+  margin-left: 15px;
+  margin-top: 9px;   /* space to the left */
+  cursor: pointer;
+}
+
 .logoDiv {
   padding: 1rem;
 }
@@ -624,11 +683,57 @@ ion-icon {
 }
 
 .listItems:hover {
-  color: #0598ec;
+  color: #0598EC;
 }
 
-.close {
-  color: #0598ec;
+/* For screens smaller than 768px (phones + small tablets) */
+@media screen and (max-width: 768px) {
+  .toggler {
+    size: 10px;
+}
+  .close {
+    width: 40px;       /* smaller logo */
+    height: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 5px;
+  }
+
+  .logoDiv {
+    padding: 0.5rem;   /* reduce padding */
+  }
+
+  .menuList {
+    padding: 1rem;     /* tighter spacing */
+    padding-left: 2rem;
+    font-size: 14px;   /* smaller text */
+  }
+
+  .listItems {
+    padding: 0.3rem 0;
+  }
+}
+/* Media query for navbar in mobile view */
+@media (max-width: 768px) {
+  .outerNavDiv {
+  position: relative !important; /* override fixed */
+  background: rgba(255, 255, 255, 0.35) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+  }
+  .hamburgerIcon {
+    margin-top: 10px;
+  }
+  .globalIcon {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .menu {
+    height: 80vh !important; /* reduce from 100vh */
+  }
 }
 
 /* careers page */
