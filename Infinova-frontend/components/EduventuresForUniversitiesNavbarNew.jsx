@@ -35,7 +35,7 @@ const EduventuresForUniversitiesNavbar = () => {
               alt="Infinova Eduventures"
               className="h-10 md:h-12 lg:h-16 w-auto"
             />
-            <span className="text-black font-semibold text-sm md:text-lg lg:text-xl px-2 py-1 rounded-md hover:bg-gray-100">
+            <span className="text-black font-extrabold text-sm md:text-lg lg:text-xl px-2 py-1 rounded-md">
               For <span className="text-blue-600">Campus</span>
             </span>
           </div>

@@ -26,7 +26,7 @@ const Navbar = () => {
             />
           </div>
 
-          <div className="text-black font-semibold text-xs md:text-lg lg:text-xl">
+          <div className="text-black font-extrabold text-sm md:text-lg lg:text-xl">
   For <span className="text-blue-600">Students</span>
 </div>
 
