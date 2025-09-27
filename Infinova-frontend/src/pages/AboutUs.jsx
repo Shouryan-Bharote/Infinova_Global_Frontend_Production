@@ -8,7 +8,7 @@ const AboutUs = () => {
         
         {/* Left Side Image */}
         <div className="aboutus-image w-full lg:w-1/2 h-[250px] sm:h-[300px] md:h-[400px] lg:h-auto flex justify-center">
-          <img src="/aboutUsImage.png" alt="" className='h-[100%]'/>
+          <img src="https://www.cyberoism.com/wp-content/uploads/2022/01/aboutus.png" alt="" className='h-[100%]'/>
         </div>
 
         {/* Right Side Content */}
