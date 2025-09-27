@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Users, TrendingUp, Award, Briefcase } from 'lucide-react';
 
+
 const Clients = () => {
   return (
     <div className="clients-section">
@@ -12,24 +13,39 @@ const Clients = () => {
       </h1>
 
       {/* Marquee Section */}
-      <div className="clients-marquee-container">
-        <div className="flex animate-marquee whitespace-nowrap">
-          <div className="flex">
-            <img src="/google.png" alt="Google" className="clients-logo" />
-            <img src="/ebay.png" alt="Ebay" className="clients-logo" />
-            <img src="/paytm.png" alt="Paytm" className="clients-logo" />
-            <img src="/amazon.png" alt="Amazon" className="clients-logo" />
-            <img src="/unilever.png" alt="Unilever" className="clients-logo" />
-          </div>
-          <div className="flex">
-            <img src="/google.png" alt="Google" className="clients-logo" />
-            <img src="/ebay.png" alt="Ebay" className="clients-logo" />
-            <img src="/paytm.png" alt="Paytm" className="clients-logo" />
-            <img src="/amazon.png" alt="Amazon" className="clients-logo" />
-            <img src="/unilever.png" alt="Unilever" className="clients-logo" />
-          </div>
-        </div>
-      </div>
+
+  <div class="logo-slider">
+    <div class="logo-track">
+      {/* <!-- Logos (Set 1) --> */}
+      <div className='logo'><img src="/google.png"  alt="Logo 1" /></div>
+      <div className='logo'><img src="/ebay.png" alt="Logo 1" /></div>
+      <div className='logo'><img src="/paytm.png" alt="Logo 1" /></div>
+      <div className='logo'><img src="/amazon.png" alt="Logo 1" /></div>
+      <div className='logo'><img src="/unilever.png" alt="Logo 1" /></div>
+
+      {/* <!-- Logos (Set 2 – Duplicate for infinite loop) --> */}
+      <div className='logo'><img src="/google.png"  alt="Logo 1" /></div>
+      <div className='logo'><img src="/ebay.png" alt="Logo 1" /></div>
+      <div className='logo'><img src="/paytm.png" alt="Logo 1" /></div>
+      <div className='logo'><img src="/amazon.png" alt="Logo 1" /></div>
+      <div className='logo'><img src="/unilever.png" alt="Logo 1" /></div>
+
+      {/* <!-- Logos (Set 3 – Duplicate for infinite loop) --> */}
+      <div className='logo'><img src="/google.png"  alt="Logo 1" /></div>
+      <div className='logo'><img src="/ebay.png" alt="Logo 1" /></div>
+      <div className='logo'><img src="/paytm.png" alt="Logo 1" /></div>
+      <div className='logo'><img src="/amazon.png" alt="Logo 1" /></div>
+      <div className='logo'><img src="/unilever.png" alt="Logo 1" /></div>
+
+       {/* <!-- Logos (Set 4 – Duplicate for infinite loop) --> */}
+      <div className='logo'><img src="/google.png"  alt="Logo 1" /></div>
+      <div className='logo'><img src="/ebay.png" alt="Logo 1" /></div>
+      <div className='logo'><img src="/paytm.png" alt="Logo 1" /></div>
+      <div className='logo'><img src="/amazon.png" alt="Logo 1" /></div>
+      <div className='logo'><img src="/unilever.png" alt="Logo 1" /></div>
+    </div>
+  </div>
+
 
       {/* Why Choose Us Heading */}
       <div className="choose-heading">
@@ -37,14 +53,15 @@ const Clients = () => {
           Why <span className="text-blue-500">Choose</span> Us ?
         </h2>
       </div>
-
       {/* Stats Cards */}
       <div className="stats-grid">
         <div className="stats-card bg-[#FFF3E3] flex items-center flex-col">
           <Users className="stats-icon" />
+
           <h3 className="stats-number">30+</h3>
-          <p className="stats-label">Teams</p>
+          <p className="stats-label" id="stats-Team">Teams</p>
         </div>
+       
 
         <div className="stats-card bg-[#FFEEEE] flex items-center flex-col">
           <TrendingUp className="stats-icon" />
