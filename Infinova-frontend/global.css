@@ -21,7 +21,7 @@ ion-icon {
 .aboutus-container {
   width: 100vw;
   min-height: 100vh;
-  padding: 4rem 1rem; /* top/bottom padding, left/right padding */
+  padding: 5rem 1rem; /* top/bottom padding, left/right padding */
 }
 
 .aboutus-inner {
@@ -46,10 +46,15 @@ ion-icon {
 /* CEO Page Custom Styles */
 
 .ceo-container {
-  width: 100vw;
-  min-height: 100vh;
+  /* width: 50vw; */
+  /* min-height: 100vh; */
   background-color: #eaecfb;
   padding: 4rem 1rem; /* Top/bottom + Left/right padding */
+  width: 75%;
+  position: relative;
+  left: 200px;
+  border-radius: 20px;
+  margin-bottom: 2rem;
 }
 
 .ceo-inner {
@@ -61,8 +66,13 @@ ion-icon {
   margin: 0 auto;
 }
 
-.ceo-image {
-  margin-bottom: 1.5rem;
+.ceo-image img {
+  /* margin-bottom: 1.5rem; */
+  margin: 20px 120px 20px 100px;
+  padding-right: 30px;
+  width: 190%;
+  height: 50rem;
+
 }
 
 .ceo-content {
@@ -88,30 +98,66 @@ ion-icon {
 
 /* Heading */
 .clients-heading {
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   text-align: center;
 }
 
-/* Marquee Container */
-.clients-marquee-container {
-  margin-bottom: 4rem;
-  padding: 1.5rem;
-  border: 1px solid #e5e7eb;
-  border-radius: 1rem;
-  background-color: #ffffff;
+/* Clients marquee css  */
+
+.logo-slider {
   overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
 }
 
-/* Logo Styles */
-.clients-logo {
-  margin: 0 1.5rem;
-  height: 3rem;
-  object-fit: contain;
+.logo-track {
+  display: flex;
+  gap: 50px; /* space between logos */
+  animation: scroll 18s linear infinite;
 }
+
+.logo {
+  flex: 0 0 auto;
+}
+
+.logo img {
+  max-width: 150px;   /* responsive size */
+  width: 100%;
+  height: 50px;
+  display: block;
+}
+
+/* Animation */
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .logo img {
+    max-width: 100px;
+  }
+  .logo-track {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    max-width: 80px;
+  }
+  .logo-track {
+    gap: 15px;
+  }
+}
+
+
 
 /* Why Choose Us Heading */
 .choose-heading {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
   text-align: center;
 }
 
@@ -120,11 +166,15 @@ ion-icon {
   margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  font-family: "Montserrat", sans-serif;
   gap: 2rem;
   max-width: 72rem;
   margin-left: auto;
   margin-right: auto;
   padding: 0 1rem;
+}
+#stats-Team{
+  margin-right: 0.5rem;
 }
 
 /* Cards */
@@ -132,10 +182,9 @@ ion-icon {
   padding: 2rem 1rem;
   border-radius: 1rem;
   border: 1px solid #e5e7eb;
-
   box-shadow: 0 2px 6px #00000061;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-
+  
   text-align: center;
 }
 
@@ -151,6 +200,7 @@ ion-icon {
   color: #3b82f6;
   margin-bottom: 0.75rem;
 }
+
 
 /* Numbers inside cards */
 .stats-number {
@@ -169,32 +219,19 @@ ion-icon {
 /* Marquee Animation */
 @keyframes marquee {
   0% {
-    transform: translateX(0%);
+    transform: translateX(0);
   }
   100% {
     transform: translateX(-50%);
   }
 }
 
-.animate-marquee {
-  display: flex;
-  animation: marquee 18s linear infinite;
-}
-
-.hamburgerIcon {
+.hamburgerIcon{
   font-size: 5rem;
 }
 
+
 /* divisions page */
-/* Outer Container */
-.division-outer {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px 20px;
-  box-sizing: border-box;
-}
 
 /* Heading */
 .division-header {
@@ -202,88 +239,62 @@ ion-icon {
   justify-content: center;
   align-items: center;
   gap: 8px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+
 }
 
 .division-header-title {
-  font-size: 2.5rem;
+  margin-top: 50px;
+  font-size: 3.5rem;
   font-weight: bold;
-  color: #000;
+  
 }
 
 .division-header-blue {
   color: #4a90e2;
 }
 
-/* Logo Section */
-.division-logo-container {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  margin-bottom: 50px;
+ .cards {
+  display: grid;
+  margin: 0 160px 0 210px;
+  /* padding: 10px -30px; */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
-
-.division-logo-card {
+/* Card styling */
+.card {
   background: #fff;
-  padding: 40px 80px;
-  border-radius: 20px;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.05);
+  width: 350px;
+}
+.card h3 {
+  font-size: 1.4rem;
+  font-weight: bolder;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.card .division-info-img{
+  margin-left: 10px;
+  padding:20px;
+  
+  
 }
 
-.division-logo-card:hover {
-  transform: translateY(-8px);
-  box-shadow: -6px 6px 20px rgba(0, 255, 255, 0.5);
-}
-
-.division-logo-img {
-  max-width: 200px;
-  height: auto;
-}
-
-/* Blue Content Section */
-.division-content {
-  background: #e6f3ff;
-  border-radius: 20px;
-  padding: 40px 20px;
-  width: 100%;
-  max-width: 1100px;
-  box-sizing: border-box;
-}
-
-.division-content-grid {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 30px;
+.card p {
+  font-size: 0.99rem;
+  margin-bottom: 15px;
+  line-height: 1.5;
   text-align: center;
 }
 
-/* Info Cards */
-.division-info-card {
-  flex: 1 1 280px;
-  max-width: 300px;
-  padding: 20px;
-  justify-content: center;
-}
-
-.division-info-img {
-  width: 60px;
-  height: auto;
-  margin-bottom: 20px;
-}
-
-.division-info-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-.division-info-text {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.5;
+/* Hover effect */
+.card:hover {
+  transform: translateY(-10px);
+  /* box-shadow: 0px 8px 20px rgba(3, 185, 240, 0.15); */
+  box-shadow: -6px 6px 20px rgba(0, 255, 255, 0.5);
 }
 
 /* Responsive */
@@ -385,6 +396,102 @@ ion-icon {
     font-size: 1.5rem;
     padding: 1rem 3rem;
   }
+}
+
+@media (max-width: 768px ) {
+
+   /* Divison Page */
+  .card{
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    max-width: fit-content;
+    justify-items: center;
+  }
+  
+ .cards {
+  display: grid;
+  margin:  60px  10px;
+  padding: 10px  20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+}
+  .division-header-title {
+    font-size: 2rem;
+  }
+  .division-header{
+    margin-bottom: -3rem;
+  }
+
+  .division-logo-img {
+    max-width: 150px;
+  }
+
+  .division-info-card {
+    max-width: 100%;
+  }
+  .division-logo-card img{
+    max-width: 60%;
+    margin: auto;
+    height: 5em;
+  }
+  .cards p{
+    padding: 1rem;
+  }
+  .cards a{
+    padding-bottom: 1.5rem;
+  }
+  /* Aboutus Page */
+ 
+  .aboutus-image img{
+    margin: -8rem 0rem 3rem 0rem;
+    width: 100%;
+    height: 20rem;
+  }
+  .aboutus-container p {
+  margin: -3rem 0rem 3rem 0rem; 
+ }
+ .aboutus-heading h1{
+  margin: -6rem 0rem 4rem 0rem;
+ }
+
+ /* Clinet Section  */
+  
+ .clients-section {
+  margin:  -5rem 0rem 3rem 0rem;
+ }
+
+  /* Ceo Page */
+
+  .ceo-container{
+     width: 90%;
+    margin: 4rem 10rem 0rem -11.3rem;
+    padding: 2rem ;
+    max-width: fit-content;
+    justify-items: center;
+  }
+  .ceo-image img{
+    max-width: 150%;
+    padding: 0rem 1rem 3rem 2rem ;
+    margin: -11rem 1rem 0rem 0rem;
+  }
+  .ceo-content p{
+    width: 180% ;
+    margin: 0rem 0rem 0rem 0rem ;
+  }
+  .ceo-heading h1{
+    margin: -10rem 0rem 4rem 0rem;
+  }
+  .ceo-content p{
+   margin: -7rem 0rem 4rem 0rem;
+   padding: 0rem -6rem 0rem -3rem ;
+ }
+ .ceo-container {
+  margin-bottom: 3rem;
+ }
+ .ceo-inner{
+  height: 916px;
+ }
 }
 
 /* footer page */
