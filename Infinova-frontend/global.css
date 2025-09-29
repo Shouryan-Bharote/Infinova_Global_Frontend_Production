@@ -712,6 +712,7 @@ ion-icon {
 /* toggler icon added by satish */
 /*glass effect on navBar*/
 /*mediaquery for hamburger and global icon*/
+/* 🌐 Default (desktop > 768px) */
 .hamburgerIcon {
   margin-left: -75px;
   margin-top: 3px;
@@ -727,44 +728,12 @@ ion-icon {
   height: 60px;
 }
 
-/* 📱 Small screens (phones) */
-@media screen and (max-width: 640px) {
-  .hamburgerIcon {
-    margin-left: 14px;   /* reduce left gap */
-    margin-top: -30px;    /* reduce top gap */
-    width: 50px;        /* smaller size */
-    height: 35px;
-  }
-
-  .globalIcon {
-    margin-left: 6px;
-    margin-top: -30px;
-    width: 120px;       /* shrink logo on phones */
-  }
-}
-
-/* 💻 Medium screens (tablets) */
-@media screen and (min-width: 641px) and (max-width: 1024px) {
-  .hamburgerIcon {
-    margin-left: 6px;
-    margin-top: 3px;
-    width: 35px;
-    height: 35px;
-  }
-
-  .globalIcon {
-    margin-left: 8px;
-    margin-top: 2px;
-    width: 160px;
-  }
-}
-
 .close {
-  width: 60px;         /* increase width */
-  height: 60px;        /* increase height */
-  margin-right: 15px;  /* space to the right */
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
   margin-left: 15px;
-  margin-top: 9px;   /* space to the left */
+  margin-top: 9px;
   cursor: pointer;
 }
 
@@ -781,7 +750,6 @@ ion-icon {
   padding-left: 4rem;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-  font-style: normal;
 }
 
 .listItems {
@@ -792,13 +760,36 @@ ion-icon {
   color: #0598EC;
 }
 
-/* For screens smaller than 768px (phones + small tablets) */
+/* 📱 Mobile view (≤768px) */
 @media screen and (max-width: 768px) {
-  .toggler {
-    size: 10px;
-}
+  .outerNavDiv {
+    position: relative !important;
+    background: rgba(232, 228, 228, 0.35) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+    height: 60px !important;
+  }
+
+  .hamburgerIcon {
+    margin-left: 14px;
+    margin-top: 2px;
+    width: 30px;   /* smaller */
+    height: 25px;
+  }
+
+  .globalIcon {
+    margin-top: 2px;
+    margin-left: 40px;
+    width: 100%;       /* take full width */
+    display: flex;
+    justify-content: center;  /* center horizontally */
+    align-items: center;      /* center vertically */
+  }
+
   .close {
-    width: 40px;       /* smaller logo */
+    width: 40px;
     height: 40px;
     margin-right: 10px;
     margin-left: 10px;
@@ -806,39 +797,21 @@ ion-icon {
   }
 
   .logoDiv {
-    padding: 0.5rem;   /* reduce padding */
+    padding: 0.5rem;
   }
 
   .menuList {
-    padding: 1rem;     /* tighter spacing */
+    padding: 1rem;
     padding-left: 2rem;
-    font-size: 14px;   /* smaller text */
+    font-size: 14px;
   }
 
   .listItems {
     padding: 0.3rem 0;
   }
-}
-/* Media query for navbar in mobile view */
-@media (max-width: 768px) {
-  .outerNavDiv {
-  position: relative !important; /* override fixed */
-  background: rgba(255, 255, 255, 0.35) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
-  }
-  .hamburgerIcon {
-    margin-top: 10px;
-  }
-  .globalIcon {
-    margin-top: 10px;
-  }
-}
-@media (max-width: 768px) {
+
   .menu {
-    height: 80vh !important; /* reduce from 100vh */
+    height: 80vh !important; /* shorter than full screen */
   }
 }
 
