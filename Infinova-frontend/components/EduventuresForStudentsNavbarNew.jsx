@@ -16,20 +16,16 @@ const Navbar = () => {
     <>
       {/* Desktop Navbar */}
       <nav className="w-full h-16 md:h-20 lg:h-24 bg-white flex items-center px-4 md:px-6 lg:px-8 mr-4 shadow-sm border-b border-gray-200 sticky top-0 z-50">
-        {/* Left: Logo + label */}
-        <div className="flex items-center space-x-2 md:space-x-6 lg:space-x-8">
-          <div className="logo">
-            <img
-              src={logoImage}
-              alt="Infinova Eduventures - Bridging your Career"
-              className="h-10 md:h-12 lg:h-16 w-auto"
-            />
-          </div>
-
-          <div className="text-black font-semibold text-xs md:text-lg lg:text-xl">
-  For <span className="text-blue-600">Students</span>
-</div>
-
+        {/* Left: Logo + label (fixed to match Universities navbar) */}
+        <div className="flex items-center space-x-3">
+          <img
+            src={logoImage}
+            alt="Infinova Eduventures - Bridging your Career"
+            className="h-10 md:h-12 lg:h-16 w-auto"
+          />
+          <span className="text-black font-extrabold text-sm md:text-lg lg:text-xl px-2 py-1 rounded-md">
+            For <span className="text-blue-600">Students</span>
+          </span>
         </div>
 
         {/* Spacer pushes search to the right end */}
