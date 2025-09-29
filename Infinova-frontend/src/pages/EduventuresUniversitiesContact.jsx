@@ -8,16 +8,16 @@ export default function EduventuresUniversitiesContact() {
       {/* Stats Section */}
       <div className="EduventuresUniversitiesContactStats flex flex-col md:flex-row justify-center items-center">
         <div className="EduventuresUniversitiesContactStatBox bg-blue-600 text-white font-bold rounded-2xl shadow-lg flex flex-col justify-center items-center">
-          <p className="text-2xl">100+</p>
-          <p className="text-lg">College</p>
+          <p className="text-3xl">100+ College</p>
+          {/* <p className="text-lg">College</p> */}
         </div>
         <div className="EduventuresUniversitiesContactStatBox bg-blue-600 text-white font-bold rounded-2xl shadow-lg flex flex-col justify-center items-center">
-          <p className="text-2xl">15,000+</p>
-          <p className="text-lg">Trained</p>
+          <p className="text-3xl">15,000+ Trained</p>
+          {/* <p className="text-lg">Trained</p> */}
         </div>
         <div className="EduventuresUniversitiesContactStatBox bg-blue-600 text-white font-bold rounded-2xl shadow-lg flex flex-col justify-center items-center">
-          <p className="text-2xl">200+</p>
-          <p className="text-lg">Placement</p>
+          <p className="text-3xl">200+ Placement</p>
+          {/* <p className="text-lg">Placement</p> */}
         </div>
       </div>
 

@@ -1038,84 +1038,99 @@ ion-icon {
 
 /* eduventuresForUniversity hero section */
 /* ================================
-   Hero Section Layout
+  Hero Section Layout
 ================================ */
 .eduventuresForUniversitiesHeroSection {
-  padding: 2rem 1rem;
+  padding: 2rem 1rem; /* Padding for mobile */
   width: 100%;
-  max-width: 100vw; /* stay inside screen width */
-  overflow: hidden; /* hide accidental overflow */
+  max-width: 100vw;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
+/* Tablet and larger styles */
 @media (min-width: 768px) {
   .eduventuresForUniversitiesHeroSection {
     flex-direction: row;
-    padding: 3rem 2rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .eduventuresForUniversitiesHeroSection {
-    padding: 4rem 6rem;
+    justify-content: space-between;
+    align-items: center; /* This is key for vertical alignment */
+    padding: 4rem 6%; /* Proper responsive padding */
+    gap: 3rem;
   }
 }
 
 /* ================================
-   Left Side (Text)
+  Left Side (Text)
 ================================ */
 .eduventuresForUniversitiesHeroSectionLeft {
-  flex: 1;
-  max-width: 100%;
+  flex-basis: 80%; /* Slightly more space for text */
+  display: flex; /* Use flexbox... */
+  flex-direction: column; /* ...to stack content vertically... */
+  justify-content: center; /* ...and center it perfectly. */
+  text-align: center;
 }
 
 @media (min-width: 768px) {
   .eduventuresForUniversitiesHeroSectionLeft {
-    max-width: 50%;
+    text-align: left;
   }
 }
 
 .eduventuresForUniversitiesHeroSectionHeading {
-  font-size: clamp(1.8rem, 4vw, 3.2rem);
-  margin-bottom: 2rem;
+  font-size: clamp(3.2rem, 5vw, 4.6rem); /* Increased text size */
   word-wrap: break-word;
-  line-height: 1.2;
+  line-height: 1.25; /* Slightly increased line-height for readability */
   font-weight: 800;
+  margin-top: -4rem;
 }
 
 /* ================================
-   Button
+  Button
 ================================ */
 .eduventuresForUniversitiesHeroSectionButton {
-  padding: 1rem 2.5rem;
-  font-size: 1rem;
+  padding: 0.8rem 2rem;
+  font-size: 1.7rem;
+  margin-top: 2.5rem;
+  /* Make button align left on desktop */
+  align-self: center;
 }
 
+@media (min-width: 768px) {
+  .eduventuresForUniversitiesHeroSectionButton {
+    align-self: flex-start;
+  }
+}
+
+
 /* ================================
-   Right Side (Image)
+  Right Side (Image)
 ================================ */
 .eduventuresForUniversitiesHeroSectionRight {
-  flex: 1;
-  max-width: 100%;
+  flex-basis: 50%; /* Slightly less space for image */
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: -4rem;
+  padding-left: 7em;
 }
 
 @media (min-width: 768px) {
   .eduventuresForUniversitiesHeroSectionRight {
-    max-width: 50%;
+    justify-content: flex-start
   }
 }
 
 .eduventuresForUniversitiesHeroSectionImage {
   width: 100%;
   height: auto;
-  max-width: 100%; /* cannot exceed parent width */
-  max-height: 70vh; /* limit height relative to viewport */
-  object-fit: contain; /* scale without distortion */
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
 }
+
 
 /* eduventures Contact page */
 /* Outer container */
@@ -1134,7 +1149,7 @@ ion-icon {
 
 /* Stat Boxes (equal size) */
 .EduventuresUniversitiesContactStatBox {
-  width: 330px;
+  width: 340px;
   height: 100px;
   text-align: center;
   padding: 1.5rem;
@@ -1338,6 +1353,7 @@ ion-icon {
   margin-bottom: 1rem;
 }
 .eduventuresCourses-card:hover {
+  
   transform: scale(1.1);
 }
 .eduventuresCourses-btn {
